@@ -1,5 +1,6 @@
 java_binary(
   name = "test",
+  javacopts = ["--enable-preview"],
   srcs = ["Hello.java"],
     deps = [
         ":with-multiline",
@@ -9,6 +10,7 @@ java_binary(
 
 java_library(
     name = "with-multiline",
-    srcs = glob(["Multiline.java"]),
+    srcs = ["Multiline.java"],
+    javacopts = ["--enable-preview"],
     visibility = ["//visibility:public"],
 )
